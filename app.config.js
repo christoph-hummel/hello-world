@@ -1,10 +1,10 @@
-window.MyApp = $.extend(true, window.MyApp, {
+window.HRworksReceipt = $.extend(true, window.HRworksReceipt, {
     "config": {
         "navigationType": "navbar",
         "navigation": [
             {
-                title: "Home",
-                action: "#home",
+                title: "Receipts",
+                action: "#index",
                 icon: "home"
             },
             {

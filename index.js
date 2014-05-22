@@ -1,15 +1,37 @@
-﻿window.MyApp = window.Application2 || {};
+﻿window.HRworksReceipt = window.HRworksReceipt || {};
 
 $(function() {
     // Uncomment the line below to disable platform-specific look and feel and to use the Generic theme for all devices
     // DevExpress.devices.current({ platform: "generic" });
 
-    MyApp.app = new DevExpress.framework.html.HtmlApplication({
-        namespace: MyApp,
-        navigationType: MyApp.config.navigationType,
-        navigation: MyApp.config.navigation
-    });
-    MyApp.app.router.register(":view/:id", { view: "home", id: undefined });
+	HRworksReceipt.localStoreReceipts = new DevExpress.data.LocalStore({
+		name: "receipts",
+		key: "guid",
+		immediate: true
+	});
+	HRworksReceipt.localStoreCurrencies = new DevExpress.data.LocalStore({
+		name: "currencies",
+		key: "symbol",
+		immediate: true
+	});
+	HRworksReceipt.localStoreReceiptKinds = new DevExpress.data.LocalStore({
+		name: "receiptKinds",
+		key: "id",
+		immediate: true
+	});
+	HRworksReceipt.localStoreKindsOfPayment = new DevExpress.data.LocalStore({
+		name: "kindsOfPayment",
+		key: "id",
+		immediate: true
+	});
 
-    MyApp.app.navigate();
+    HRworksReceipt.app = new DevExpress.framework.html.HtmlApplication({
+        namespace: HRworksReceipt,
+        navigationType: HRworksReceipt.config.navigationType,
+        navigation: HRworksReceipt.config.navigation
+    });
+
+    HRworksReceipt.app.router.register(":view/:id", { view: "index", id: undefined });
+	 HRworksReceipt.initData();
+    HRworksReceipt.app.navigate();
 });

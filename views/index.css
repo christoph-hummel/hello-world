@@ -1,0 +1,25 @@
+﻿/* Put css styles for home view here */
+.home-view p {
+	padding: 5px;
+}
+.left {
+	font-size:14px;
+	width: 50%;
+	position: relative;
+	float: left;
+}
+.right {
+	font-size:14px;
+	text-align:right;
+	width: 50%;
+	position: relative;
+	float: right;
+}
+.deleteButton  {
+    margin: 10px;
+}
+.deleteButton .dx-button {
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+}
