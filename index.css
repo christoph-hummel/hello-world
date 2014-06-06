@@ -3,7 +3,138 @@ body,
 #view-port {
     height: 100%;
 }
+
 body {
     margin: 0;
     padding: 0;
 }
+
+#viewport .main-content {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: auto;
+}
+
+#viewport.dx-theme-win8 .main-content {
+    top: 46px;
+}
+
+#viewport.dx-theme-android .main-content {
+    top: 48px;
+}
+
+#viewport.dx-theme-ios .main-content {
+    top: 46px;
+}
+
+#viewport.dx-theme-ios7 .main-content {
+    top: 45px;
+}
+
+#viewport.dx-theme-tizen .main-content {
+    top: 45px;
+}
+
+#viewport.dx-theme-generic .main-content {
+    top: 80px;
+}
+
+.dx-viewport.dx-theme-ios7 .main-content {
+    background-color: #EFEFF4;
+}
+
+.empty-layout {
+    height: 100%;
+}
+
+.round-buttons {
+    margin: 4px 8px 8px;
+    text-align: center;
+}
+
+.round-buttons .dx-button {
+    width: 45%;
+}
+
+.dx-theme-tizen .round-buttons .dx-button,
+.dx-theme-win8 .round-buttons .dx-button {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.dx-theme-ios .slider-container {
+    min-height: 25px;
+}
+
+.dx-theme-ios .slider-container > div {
+    line-height: 25px;
+}
+
+.slider-container {
+    min-height: 32px;
+}
+
+.slider-container > div {
+    line-height: 30px;
+}
+
+.dx-viewport.dx-theme-ios-typography .dx-fieldset,
+.dx-viewport.dx-theme-ios7-typography .dx-fieldset {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.dx-theme-android .slider-container {
+    padding-bottom: 0;
+}
+
+.slider-title {
+    float: left;
+    width: 80px;
+}
+
+.slider-body {
+    position: absolute;
+    left: 85px;
+    right: 65px;
+}
+
+.dx-theme-ios .slider-body {
+    top: 5px;
+}
+
+.dx-theme-ios7 .slider-body {
+    top: 3px;
+}
+
+.dx-theme-tizen .slider-body,
+.dx-theme-android .slider-body {
+    top: 8px;
+}
+
+.dx-theme-win8 .slider-body {
+    top: 7px;
+}
+
+.slider-value {
+    float: right;
+    width: 55px;
+    text-align: center;
+}
+
+#results .dx-field-label,
+#results .dx-field-value
+{
+    width: 50%;
+    float: left;
+}
+
+.dx-theme-tizen .dx-field-value.dx-texteditor {
+    margin-top: 0;
+}
+
+.dx-theme-tizen .dx-field {
+    min-height: 35px;
+}
+

@@ -1,37 +1,25 @@
-﻿window.HRworksReceipt = window.HRworksReceipt || {};
+﻿"use strict";
+
+window.TipCalculator = window.TipCalculator || {};
 
 $(function() {
     // Uncomment the line below to disable platform-specific look and feel and to use the Generic theme for all devices
     // DevExpress.devices.current({ platform: "generic" });
 
-	HRworksReceipt.localStoreReceipts = new DevExpress.data.LocalStore({
-		name: "receipts",
-		key: "guid",
-		immediate: true
-	});
-	HRworksReceipt.localStoreCurrencies = new DevExpress.data.LocalStore({
-		name: "currencies",
-		key: "symbol",
-		immediate: true
-	});
-	HRworksReceipt.localStoreReceiptKinds = new DevExpress.data.LocalStore({
-		name: "receiptKinds",
-		key: "id",
-		immediate: true
-	});
-	HRworksReceipt.localStoreKindsOfPayment = new DevExpress.data.LocalStore({
-		name: "kindsOfPayment",
-		key: "id",
-		immediate: true
-	});
+    if(DevExpress.devices.real().platform === "win8") {
+        $("body").css("background-color", "#000");
+    }
 
-    HRworksReceipt.app = new DevExpress.framework.html.HtmlApplication({
-        namespace: HRworksReceipt,
-        navigationType: HRworksReceipt.config.navigationType,
-        navigation: HRworksReceipt.config.navigation
+    document.addEventListener("deviceready", function() { navigator.splashscreen.hide(); });
+
+    TipCalculator.app = new DevExpress.framework.html.HtmlApplication({
+        namespace: TipCalculator,
+        layoutSet: DevExpress.framework.html.layoutSets[TipCalculator.config.layoutSet]
     });
 
-    HRworksReceipt.app.router.register(":view/:id", { view: "index", id: undefined });
-	 HRworksReceipt.initData();
-    HRworksReceipt.app.navigate();
+    TipCalculator.app.router.register(":view", { view: "home" });
+    TipCalculator.app.navigate();   
 });
+
+Globalize.culture(navigator.language || navigator.browserLanguage);
+//Globalize.culture("fr");

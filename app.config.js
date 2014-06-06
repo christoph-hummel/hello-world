@@ -1,17 +1,5 @@
-window.HRworksReceipt = $.extend(true, window.HRworksReceipt, {
+﻿window.TipCalculator = $.extend(true, window.TipCalculator, {
     "config": {
-        "navigationType": "navbar",
-        "navigation": [
-            {
-                title: "Receipts",
-                action: "#index",
-                icon: "home"
-            },
-            {
-                title: "About",
-                action: "#about",
-                icon: "info"
-            }
-        ]
+        "layoutSet": "empty"
     }
 });
